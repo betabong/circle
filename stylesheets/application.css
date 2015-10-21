@@ -23,24 +23,26 @@ only screen and (min-device-pixel-ratio: 2) {
 /**********************************************************/
 
 body {
+	font: caption;
+}
+body * {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+body {
 	color: #3d454c;
-	font-size: 14px;
+	font-size: 75%;
 	line-height: 1.3;
-	font-family: "helvetica neue",helvetica,arial,sans-serif;
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
 }
 
 input, textarea, select {
-	font-family: "helvetica neue",helvetica,arial,sans-serif;
-	font-size: 12px;
+	font-size: inherit;
 }
 
 a, a:link, a:visited {
 	color: #2996cc;
-}
+} 
 
 #main {
 	background-color: #fafafa;
@@ -54,7 +56,9 @@ a, a:link, a:visited {
 div#content {
 	margin-left: -20px;
 	padding-left: 25px;
-  padding-top: 15px;
+	padding-top: 15px;
+	box-sizing: border-box;
+	padding-right: 25px;
 }
 
 #footer {
@@ -116,10 +120,9 @@ h2 {
 }
 
 #header > h1 {
-	font-family: "helvetica neue",helvetica,arial,sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 13px;
+	font-size: 1em;
 	letter-spacing: 1px;
 	padding: 17px 10px 30px 55px;
 }
@@ -134,7 +137,7 @@ h2 {
 #top-menu {
 	background: #000;
 	padding: 7px 20px 2px 25px;
- 	font-size: 0.9em;
+ 	font-size: 1em;
 }
 
 #top-menu a {
@@ -206,7 +209,7 @@ h2 {
 
 #sidebar h3 {
 	font-size:16px;
-	font-weight: normal;
+	font-weight: lighter;
 	margin-top: 20px;
 	margin-bottom: 5px;
 	color: #666;
@@ -241,7 +244,7 @@ div.flash.warning, .conflict {
 }
 
 #errorExplanation ul {
-	font-size: 14px;
+	font-size: inherit;
 }
 
 #login-form table {
@@ -352,12 +355,11 @@ div.tooltip:hover span.tip {
 /* jQuery UI */
 /**********************************************************/
 .ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-	font-family: "SqMarket","helvetica neue",helvetica,arial,sans-serif;
 	font-size: 1em;
 }
 
 .ui-widget input, .ui-widget select, .ui-widget textarea {
-	font-size: 12px;
+	font-size: inherit;
 }
 
 .ui-widget-overlay {
@@ -400,7 +402,7 @@ div.modal {
 }
 .ui-widget-content select, .ui-widget-content input[type="text"],
 .ui-datepicker .ui-datepicker-title select {
-	font-size: 12px;
+	font-size: inherit;
 }
 
 .ui-state-hover,
@@ -530,7 +532,7 @@ input[type="submit"].button-small {
 	font-weight: 500;
 	text-align: center;
 	border: 1px solid #e0e2e3;
-	font-size: 14px;
+	font-size: inherit;
 	background: #fafafa;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -591,7 +593,7 @@ input[type="submit"].small {
 	height: 26px;
 	padding: 0 13px 0;
 	line-height: 23px;
-	font-size: 12px;
+	font-size: inherit;
 }
 
 /**********************************************************/
@@ -771,9 +773,9 @@ table.list th {padding: 5px;}
 table.list input[type="checkbox"] {margin-top: 6px;}
 
 table.list tbody tr:hover {background-color: #dfeff7;}
-table.list tr.issue a { color: #666; }
+table.list tr.issue a { color: #333; }
 
-tr.odd.priority-highest, table.list tbody tr.odd.priority-highest:hover { color: #900; font-weight: bold; }
+tr.odd.priority-highest, table.list tbody tr.odd.priority-ighest:hover { color: #900; font-weight: bold; }
 tr.odd.priority-highest { background: #FFE2E2; }
 tr.even.priority-highest, table.list tbody tr.even.priority-highest:hover { color: #900; font-weight: bold; }
 tr.even.priority-highest { background: #FAEFEF; }
@@ -812,6 +814,69 @@ div.deal {
 	padding: 10px !important;
 }
 
+div.issue {
+	background-color: #E5F3D7;
+}
 table.progress td {padding: 0px;}
 
 div.details {padding: 20px !important;}
+
+
+
+/** OVERWRITE **/
+
+#query_form_content,
+.buttons {
+	font-size: inherit;
+}
+
+select[multiple] {
+	width: 20em !important;
+}
+
+html #sidebar ul li {
+	margin-bottom: 5px;
+}
+
+#context-menu li a {
+	border: 1px solid transparent;
+}
+
+html #context-menu li:hover {
+	border-color: transparent;
+	background-color:transparent;
+	border-radius: 0;
+}
+#context-menu li a:not(.disabled):hover {
+	border: 1px solid #628db6;
+	background-color: #eef5fd;
+	border-radius: 3px;
+}
+#context-menu li a.disabled {
+	cursor: default;
+}  
+
+
+#history > h3 {
+	display: none;
+}
+div.journal {
+	margin-top: 2em;
+}
+html div.issue table.attributes {
+	border-top: 1px solid rgba(0,0,0,0.1);
+	padding-top: 10px;
+	padding-left: 65px;
+}
+html div.issue table.attributes th {
+	width: 13em;
+	font-weight: normal;
+	/* text-align: right; */
+}
+html div.issue table.attributes td {
+	width: auto;
+	font-weight: bold;
+}
+html div.issue table.attributes th,
+html div.issue table.attributes td {
+}
