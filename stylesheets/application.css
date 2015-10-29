@@ -42,7 +42,7 @@ input, textarea, select {
 
 a, a:link, a:visited {
 	color: #2996cc;
-} 
+}
 
 #main {
 	background-color: #fafafa;
@@ -107,6 +107,58 @@ h2 {
 	padding: inherit;
 	margin-left: inherit;
 }
+
+/**********************************************************/
+/* LAYOUT */
+/**********************************************************/
+
+html #wrapper3 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+html #main {
+  display: flex;
+  flex: 1;
+}
+html #sidebar {
+  order: 2;
+  width: 22em;
+  float: none;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+html #content {
+  width: auto;
+  flex: 1;
+  float: none;
+  min-width: 0;
+}
+
+/*
+@media screen and (max-width: 850px) {
+  html #main {
+    flex-direction: column;
+  }
+  html #sidebar {
+  	width: auto;
+  }
+  table.issues,
+  table.issues tr,
+  table.issues thead,
+  table.issues tbody,
+  table.issues thead tr th,
+  table.issues tbody tr td  {
+  	display: block !important;
+    width: auto;
+  	border: 0;
+  	text-align: left;
+  }
+}
+*/
+
+
 
 /**********************************************************/
 /* HEADER */
@@ -531,7 +583,7 @@ input[type="submit"].button-small {
 	line-height: 30px;
 	font-weight: 500;
 	text-align: center;
-	border: 1px solid #e0e2e3;
+	border: 1px solid #B8BABB;
 	font-size: inherit;
 	background: #fafafa;
 	-webkit-border-radius: 4px;
@@ -611,7 +663,10 @@ fieldset#filters td.values input {
 	-o-border-radius: 3px;
 	border-radius: 3px;
 	height: 22px;
-	border: 1px solid #e0e2e3;
+	/* border-radius: 0; */
+	border: 1px solid #B8BABB;
+	margin-top: -5px;
+	margin-bottom: 5px;
 }
 
 input[type="text"]:focus,
@@ -626,7 +681,7 @@ fieldset#filters td.values input:focus {
 .box {
 	padding:15px;
 	background: #fafafa;
-	border: solid 1px #e0e2e3;
+	border: solid 1px #B8BABB;
 	border-radius: 3px;
 }
 
@@ -641,7 +696,7 @@ select {
 	background-color: #fff;
 	color: #3d454c;
 	cursor: pointer;
-	border: 1px solid #e0e2e3;
+	border: 1px solid #B8BABB;
 	background: url(../images/select.png) no-repeat right #fff;
 	background-size: 18px 16px;
 	text-indent: 0.01px;
@@ -694,7 +749,7 @@ textarea {
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
 	border-radius: 3px;
-	border: 1px solid #e0e2e3;
+	border: 1px solid #B8BABB;
 }
 
 input.hasDatepicker {
@@ -815,7 +870,7 @@ div.deal {
 }
 
 div.issue {
-	background-color: #E5F3D7;
+	background-color: #E7F5D9;
 }
 table.progress td {padding: 0px;}
 
@@ -854,7 +909,7 @@ html #context-menu li:hover {
 }
 #context-menu li a.disabled {
 	cursor: default;
-}  
+}
 
 
 #history > h3 {
@@ -880,3 +935,37 @@ html div.issue table.attributes td {
 html div.issue table.attributes th,
 html div.issue table.attributes td {
 }
+
+
+
+tr.issue td.fixed_version,
+tr.issue td.subject
+{
+	white-space: normal;
+}
+table.issues tbody td {
+}
+
+
+#content .tabs ul li a {
+	padding: 7px 10px;
+}
+
+
+html>body .tabular p {
+	overflow: visible;
+}
+.tabular p > input[type="text"]
+.tabular p > input[type="password"],
+.tabular p > input[type="email"],
+.tabular p > select,
+.tabular p > textarea
+{
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+
+.splitcontent {
+	overflow: visible;
+}
+
